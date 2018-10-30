@@ -1,0 +1,38 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '2.0.4'
+    id 'com.adarshr.test-logger' version '1.5.0'
+}
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven {
+        url "http://repo.typesafe.com/typesafe/releases/"
+    }
+}
+
+dependencies {
+    compile 'org.jsoup:jsoup:1.11.3'
+    compile 'com.typesafe.akka:akka-actor_2.11:2.5.16'
+
+    testCompile 'com.typesafe.akka:akka-testkit_2.11:2.5.16'
+    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+    testCompile "cglib:cglib-nodep:3.2.7"
+    testCompile "org.objenesis:objenesis:2.6"
+}
+
+mainClassName = 'crawler.AkkaApplication'
+
+task runActors(type: JavaExec) {
+    main = 'crawler.AkkaApplication'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runClassic(type: JavaExec) {
+    main = 'crawler.ClassicApplication'
+    classpath = sourceSets.main.runtimeClasspath
+}
