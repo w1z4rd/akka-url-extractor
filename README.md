@@ -6,7 +6,7 @@ Afterwards each link in that article is followed up, reads again the content fro
 The processing of each url is done in parallel using Akka actors model running AkkaApplication
 and using usual runnable tasks execution with ClassicApplication
 
-The result is saved in a file 
+The result is saved in a file
 
 ## Prerequisites
 - JDK8

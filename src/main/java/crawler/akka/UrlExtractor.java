@@ -29,14 +29,6 @@ public class UrlExtractor extends AbstractActor {
     }
   }
 
-  public static class Parse {
-    private final String url;
-
-    public Parse(String url) {
-      this.url = url;
-    }
-  }
-
   public static Props props(ActorRef visitedActor, ActorRef aggregatorActor, HtmlParser htmlParser) {
     return Props.create(UrlExtractor.class, visitedActor, aggregatorActor, htmlParser);
   }

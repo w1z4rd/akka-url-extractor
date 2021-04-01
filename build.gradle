@@ -11,7 +11,7 @@ repositories {
     jcenter()
     mavenCentral()
     maven {
-        url "http://repo.typesafe.com/typesafe/releases/"
+        url 'http://repo.typesafe.com/typesafe/releases/'
     }
 }
 
@@ -21,8 +21,8 @@ dependencies {
 
     testCompile 'com.typesafe.akka:akka-testkit_2.11:2.5.16'
     testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
-    testCompile "cglib:cglib-nodep:3.2.7"
-    testCompile "org.objenesis:objenesis:2.6"
+    testCompile 'cglib:cglib-nodep:3.2.7'
+    testCompile 'org.objenesis:objenesis:2.6'
 }
 
 mainClassName = 'crawler.AkkaApplication'
